@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Ministry.EntityFrameworkRepositoryBuilder.DbContext.Ef6</id>
+    <version>0.2</version>
+    <title>Entity Framework 6 Repository Builder for DbContext (POCOs)</title>
+    <authors>The Ministry of Technology</authors>
+    <owners>The Ministry of Technology</owners>
+    <projectUrl>https://bitbucket.org/ministryotech/repolayer</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A customisable T4 template that generates POCO based Repositories from your EDMX file - simply edit the name of the EDMX file at the top of the TT file and run!</description>
+    <releaseNotes>Beta release
+		Enhanced Pluralisation detection</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>Entities Entity Framework ObjectContext EF Repository Data POCO</tags>
+    <dependencies>
+      <dependency id="EntityFramework" version="6.0.1" />
+    </dependencies>
+  </metadata>
+</package>

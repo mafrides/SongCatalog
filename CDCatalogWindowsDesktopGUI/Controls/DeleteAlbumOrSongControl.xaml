@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="CDCatalogWindowsDesktopGUI.DeleteAlbumOrSongControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Background="LightSalmon">
+            <Border BorderBrush="White" BorderThickness="2,0,0,2">
+                <TextBlock TextTrimming="CharacterEllipsis" Background="LightSalmon" HorizontalAlignment="Center" FontSize="16" FontWeight="SemiBold" Padding="2">
+                                    Delete
+                </TextBlock>
+            </Border>
+        </Grid>
+        <Grid DockPanel.Dock="Top" Background="LightSalmon">
+            <Border BorderBrush="White" BorderThickness="2,0,0,0">
+                <TextBlock TextTrimming="CharacterEllipsis" Background="LightSalmon" HorizontalAlignment="Center" 
+                                           FontSize="16" FontWeight="SemiBold" Padding="2" TextWrapping="Wrap" MaxWidth="200">
+                    <TextBlock.Inlines>
+                        <Run Text="Are you sure you want to delete" FontSize="24" />
+                        <LineBreak />
+                        <Run Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}},
+                                            Mode=OneWay,
+                                            Path=DataContext.GridViewModel.SelectedAlbumOrSong.Title,
+                                            TargetNullValue=Nothing Selected,
+                                            FallbackValue=Nothing Selected}" 
+                             FontStyle="Italic"/>
+                        <Run Text="?" FontSize="24" />
+                    </TextBlock.Inlines>
+                </TextBlock>
+            </Border>
+        </Grid>
+        <Border DockPanel.Dock="Bottom" BorderBrush="White" BorderThickness="2,2,0,0">
+            <DockPanel Background="LightSalmon">
+                <Button Name="SongToAddSaveButton" DockPanel.Dock="Right" Padding="2" Margin="0,0,2,0" FontWeight="SemiBold"
+                        Command="{Binding DeleteCommandAsync, IsAsync=True}">
+                    Make It Go Away
+                </Button>
+                <Rectangle Fill="Transparent" />
+            </DockPanel>
+        </Border>
+        <Border BorderBrush="White" BorderThickness="2,0,0,0">
+            <Rectangle Fill="LightSalmon" />
+        </Border>
+    </DockPanel>
+</UserControl>
